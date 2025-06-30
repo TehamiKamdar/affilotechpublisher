@@ -13,7 +13,8 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/components.css">
-  <!-- Custom style CSS --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"/>
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
 </head>
@@ -111,7 +112,8 @@
   .progress-bar {
     background-color: var(--primary-color);
   }
-  .card{
+
+  .card {
     margin: 0px;
     box-shadow: none;
   }
@@ -218,6 +220,40 @@
   .timeline-item:last-child {
     margin-bottom: 0;
   }
+
+
+  select option {
+    padding: 12px 16px;
+    background-color: white;
+    color: var(--primary-color);
+    font-weight: 500;
+    border-bottom: 1px solid #f0f2fc;
+  }
+
+  option:hover {
+    background-color: var(--primary-very-light) !important;
+  }
+
+  select option:checked,
+  select option:active {
+    background-color: var(--primary-very-light) !important;
+    color: var(--primary-color);
+  }
+
+
+  .form-control {
+    height: 42px;
+    border: 2px solid #e0e3ed;
+    padding: 0.75rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+    border-color: var(--primary-color);
+  }
 </style>
 
 <body class="">
@@ -243,7 +279,7 @@
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
-            <li class="dropdown active">
+            <li class="dropdown">
               <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
             <li class="menu-header">advertisers management</li>
@@ -293,10 +329,10 @@
               </ul>
             </li>
             <li class="menu-header">settings</li>
-            <li class="dropdown">
+            <li class="dropdown active">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Settings</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="./my-profile.html">Profile</a></li>
+                <li class="active"><a class="nav-link" href="./my-profile.html">Profile</a></li>
                 <li><a class="nav-link" href="./webs.html">Websites</a></li>
                 <li class="dropdown">
                   <a href="#" class="has-dropdown">Payment Info</a>
@@ -569,6 +605,58 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="profile-card">
+                  <div class="pr-4 pt-4 pl-4 pb-0">
+                    <h5>Create Link</h5>
+                  </div>
+                  <div class="card-body">
+                    <!-- Select Dropdown -->
+                    <div class="form-group mb-4">
+                      <select class="form-control" id="profileType">
+                        <option disabled>Please Select</option>
+                        <option selected>H.H.M</option>
+                        <option>Mesa Verde</option>
+                        <option>Los Pollos Hermanos</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex align-items-center p-2 bg-light-success rounded mb-4"
+                      style="background-color: rgba(40, 167, 69, 0.1);">
+                      <img src="./assets/icons8-check.gif" class="rounded-circle mr-2" height="24" alt="Verified">
+                      <span class="text-success font-weight-bold">
+                        <i class="fas fa-link mr-1"></i> Deep Link Verified
+                      </span>
+                    </div>
+
+                    <div class="d-flex align-items-center p-2 bg-light-success rounded mb-4"
+                      style="background-color: rgba(167, 40, 40, 0.1);">
+                      <img src="./assets/icons8-cross.gif" class="rounded-circle mr-2" height="24" alt="Verified">
+                      <span class="text-danger font-weight-bold">
+                        <i class="fas fa-link mr-1"></i> Deep Link Not Verified
+                      </span>
+                    </div>
+
+                    <!-- First Input -->
+                    <div class="form-group mb-4">
+                      <input type="text" class="form-control form-control-sm"
+                        placeholder="Enter Landing URL (Optional)">
+                    </div>
+
+                    <!-- Second Input -->
+                    <div class="form-group mb-4">
+                      <input type="email" class="form-control form-control-sm" placeholder="Enter Sub ID (Optional)">
+                    </div>
+
+                    <!-- Create Button -->
+                    <div class="d-flex justify-content-end mt-4">
+                      <button class="btn btn-primary btn-sm px-4 py-2 text-uppercase font-weight-bold"
+                        style="background-color: #6777ef; border-color: #6777ef;">
+                        <i class="fas fa-plus-circle mr-2"></i>Create Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <!-- Experience Tab -->
@@ -657,21 +745,21 @@
 </body>
 
 <script>
-document.querySelectorAll('.copy-btn').forEach(button => {
-  button.addEventListener('click', function() {
-    const target = this.getAttribute('data-target');
-    const input = document.querySelector(target);
-    input.select();
-    document.execCommand('copy');
-    
-    // Visual feedback
-    const originalText = this.innerHTML;
-    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
-    setTimeout(() => {
-      this.innerHTML = originalText;
-    }, 2000);
+  document.querySelectorAll('.copy-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const target = this.getAttribute('data-target');
+      const input = document.querySelector(target);
+      input.select();
+      document.execCommand('copy');
+
+      // Visual feedback
+      const originalText = this.innerHTML;
+      this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+      setTimeout(() => {
+        this.innerHTML = originalText;
+      }, 2000);
+    });
   });
-});
 </script>
 <!-- index.html  21 Nov 2019 03:47:04 GMT -->
 
