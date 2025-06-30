@@ -44,6 +44,9 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
         "Liberation Mono", "Courier New", monospace;
 }
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 *::selection{
     background-color: #f6f6f6;
     color: #6777e3;
@@ -6515,7 +6518,7 @@ button.bg-dark:hover {
     border-left: 0 !important;
 }
 .border-primary {
-    border-color: #007bff !important;
+    border-color: #6777ef !important;
 }
 .border-secondary {
     border-color: #6c757d !important;

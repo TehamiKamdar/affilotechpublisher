@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- index.html  21 Nov 2019 03:44:50 GMT -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Otika - Admin Dashboard Template</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="assets/css/app.css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <!-- Custom style CSS --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+</head>
+<style>
+  :root {
+    --primary-color: #6777ef;
+    --primary-light: #8594f4;
+    --primary-dark: #5666d6;
+    --text-light: #fff;
+    --text-dark: #343a40;
+  }
+
+
+  .profile-header {
+    /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); */
+    background: var(--primary-color);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 10px 30px rgba(103, 119, 239, 0.3);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+  }
+
+  .profile-avatar {
+    width: 150px;
+    height: 150px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .profile-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .profile-card {
+    border-radius: 15px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-card-header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    border-radius: 15px 15px 0 0 !important;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+  }
+
+  .stat-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(103, 119, 239, 0.1);
+  }
+
+  .stat-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  .skill-badge {
+    background-color: #f1f5fe;
+    color: var(--primary-dark);
+    padding: 0.5rem 1rem;
+    margin: 0.3rem;
+    border-radius: 50px;
+    font-weight: 500;
+    display: inline-block;
+  }
+
+  .progress {
+    height: 10px;
+    border-radius: 5px;
+  }
+
+  .progress-bar {
+    background-color: var(--primary-color);
+  }
+  .card{
+    margin: 0px;
+    box-shadow: none;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(103, 119, 239, 0.1);
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.3rem;
+    transition: all 0.3s ease;
+  }
+
+  .social-icon:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+  }
+
+  .btn-edit {
+    background-color: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-edit:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px) scale(1.002);
+  }
+
+  .tab-content {
+    padding: 1rem 0;
+  }
+
+  .nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+    border-radius: 50px;
+  }
+
+  .nav-pills .nav-link.active:hover {
+    background-color: var(--primary-color) !important;
+    border-radius: 50px;
+  }
+
+  .nav-pills .nav-link {
+    color: var(--text-dark);
+    font-weight: 500;
+    border-radius: 50px !important;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.09);
+  }
+
+  .nav-pills .nav-link:hover {
+    background-color: #fff !important;
+    border-radius: 50px;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 50px;
+  }
+
+  .timeline:before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e9ecef;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  .timeline-badge {
+    position: absolute;
+    left: -50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .timeline-content {
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+</style>
+
+<body class="">
+  <div class="loader"></div>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar sticky">
+        <div class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar"
+                class="bg-white rounded-circle nav-link nav-link-lg       collapse-btn"> <i
+                  data-feather="align-justify"></i></a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="main-sidebar sidebar-style-2" id="sidebar">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html"> <img alt="image" src="assets/img/logo.png" class="header-logo" /> <span
+                class="logo-name">Otika</span>
+            </a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Main</li>
+            <li class="dropdown active">
+              <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+            </li>
+            <li class="menu-header">advertisers management</li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="copy"></i><span>Advertisers</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="./my-advertisers.html">My Advertisers</a></li>
+                <li><a class="nav-link" href="#">New Advertisers</a></li>
+                <li><a class="nav-link" href="#">Find Advertisers</a></li>
+              </ul>
+            </li>
+            <li class="menu-header">reports management</li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="copy"></i><span>Reporting</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="./transactions.html">Transactions</a></li>
+                <li><a class="nav-link" href="./performance.html">Performance</a></li>
+              </ul>
+            </li>
+            <li class="menu-header">creativity</li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="copy"></i><span>Promotional</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="./coupons.html">Coupons</a></li>
+                <li><a class="nav-link" href="./deep-links.html">Deep Links</a></li>
+                <li><a class="nav-link" href="#">Text Links</a></li>
+              </ul>
+            </li>
+            <li class="menu-header">finance management</li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Finance</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="./overview.html">Overview</a></li>
+                <li><a class="nav-link" href="./payments.html">Payments</a></li>
+              </ul>
+            </li>
+            <li class="menu-header">tools management</li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Tools</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="./links.html">Link Generator</a></li>
+                <li><a class="nav-link" href="./api.html">API Integration</a></li>
+                <li><a class="nav-link" href="./download.html">Download Export Files</a></li>
+              </ul>
+            </li>
+            <li class="menu-header">settings</li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Settings</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="./my-profile.html">Profile</a></li>
+                <li><a class="nav-link" href="./webs.html">Websites</a></li>
+                <li class="dropdown">
+                  <a href="#" class="has-dropdown">Payment Info</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="./billing.html">Billing</a></li>
+                    <li><a href="./payments.html">Payments</a></li>
+                    <li><a href="#">Invoices</a></li>
+                  </ul>
+                </li>
+                <li><a class="nav-link" href="./settings.html">Settings</a></li>
+                <li><a class="nav-link" href="#">Logout</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </aside>
+      </div>
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Profile Header -->
+        <div class="profile-header text-center">
+          <div class="row justify-content-center">
+            <div class="col-12 text-center">
+              <img src="https://ui-avatars.com/api/?name=John+Doe&background=6777ef&color=fff&size=150" alt="Profile"
+                class="profile-avatar rounded-circle mb-3">
+              <h2 class="mb-2">John Doe</h2>
+              <div class="mb-2">
+                <img src="https://flagcdn.com/h80/ua.png"
+                  style="border: 1.5px solid #fff; border-radius: 10%; width: 35px; height: 25px; object-fit: cover;"
+                  alt="Ukraine" data-toggle="tooltip" title="" data-original-title="Ukraine">
+                <img src="https://flagcdn.com/h80/us.png"
+                  style="border: 1.5px solid #fff; border-radius: 10%; width: 35px; height: 25px; object-fit: cover;"
+                  alt="United States" data-toggle="tooltip" title="" data-original-title="United States">
+                <img src="https://flagcdn.com/h80/gb.png"
+                  style="border: 1.5px solid #fff; border-radius: 10%; width: 35px; height: 25px; object-fit: cover;"
+                  alt="United Kingdom" data-toggle="tooltip" title="" data-original-title="United Kingdom">
+                <img src="https://flagcdn.com/h80/de.png"
+                  style="border: 1.5px solid #fff; border-radius: 10%; width: 35px; height: 25px; object-fit: cover;"
+                  alt="Germany" data-toggle="tooltip" title="" data-original-title="Germany">
+                <img src="https://flagcdn.com/h80/fr.png"
+                  style="border: 1.5px solid #fff; border-radius: 10%; width: 35px; height: 25px; object-fit: cover;"
+                  alt="France" data-toggle="tooltip" title="" data-original-title="France">
+              </div>
+              <div class="mb-4">
+                <span class="badge badge-light">Advertiser</span>
+              </div>
+              <div class="d-flex justify-content-center mb-3">
+                <a href="#" class="social-icon"><i class="fab fa-twitter text-light"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in text-light"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github text-light"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-dribbble text-light"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-lg-4">
+            <!-- About Me Card -->
+            <div class="profile-card">
+              <div class="profile-card-header">
+                <i class="fas fa-user mr-2"></i>About Me
+              </div>
+              <div class="card-body">
+                <p class="card-text">Affilotech empowers businesses with innovative digital solutions and seamless
+                  integrations. We specialize in crafting engaging platforms that drive growth, optimize performance,
+                  and elevate user experiences.</p>
+                <hr>
+                <div class="mb-3">
+                  <h6><i class="fas fa-envelope mr-2 text-primary"></i>Email</h6>
+                  <p class="text-muted">john.doe@example.com</p>
+                </div>
+                <div class="mb-3">
+                  <h6><i class="fas fa-phone mr-2 text-primary"></i>Phone</h6>
+                  <p class="text-muted">+1 (555) 123-4567</p>
+                </div>
+                <div>
+                  <h6><i class="fas fa-calendar-alt mr-2 text-primary"></i>Joined</h6>
+                  <p class="text-muted">January 2018</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- If Want to show some more details, enable this and work out!! -->
+            <!-- <div class="profile-card">
+                    <div class="profile-card-header">
+                        <i class="fas fa-code mr-2"></i>Skills
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h6>UI/UX Design</h6>
+                            <div class="progress mt-2">
+                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <h6>HTML/CSS</h6>
+                            <div class="progress mt-2">
+                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <h6>JavaScript</h6>
+                            <div class="progress mt-2">
+                                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <h6>React</h6>
+                            <div class="progress mt-2">
+                                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h6 class="mb-2">Other Skills</h6>
+                            <div>
+                                <span class="skill-badge"><i class="fas fa-check mr-1"></i>Figma</span>
+                                <span class="skill-badge"><i class="fas fa-check mr-1"></i>Adobe XD</span>
+                                <span class="skill-badge"><i class="fas fa-check mr-1"></i>Bootstrap</span>
+                                <span class="skill-badge"><i class="fas fa-check mr-1"></i>SASS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+          </div>
+
+          <!-- Right Column -->
+          <div class="col-lg-8">
+            <!-- Stats Row -->
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="stat-item">
+                  <div class="stat-icon">
+                    <i class="fas fa-project-diagram"></i>
+                  </div>
+                  <h3 class="mb-1">47</h3>
+                  <p class="text-muted mb-0">Commission Rate</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="stat-item">
+                  <div class="stat-icon">
+                    <i class="fas fa-trophy"></i>
+                  </div>
+                  <h3 class="mb-1">12</h3>
+                  <p class="text-muted mb-0">Avg. Payout (Days)</p>
+                </div>
+              </div>
+
+              <!-- <div class="col-md-4">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="mb-1">128</h3>
+                            <p class="text-muted mb-0">Clients</p>
+                        </div>
+                    </div> -->
+            </div>
+
+            <!-- Tabs Navigation -->
+            <ul class="nav nav-pills mb-1" id="profileTabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="transaction-tab" data-toggle="pill" href="#transaction" role="tab"><i
+                    class="fas fa-stream mr-2"></i>Transactions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="links-tab" data-toggle="pill" href="#links" role="tab"><i
+                    class="fas fa-project-diagram mr-2"></i>Links</a>
+              </li>
+              <!-- <li class="nav-item">
+                  <a class="nav-link" id="experience-tab" data-toggle="pill" href="#experience" role="tab"><i
+                      class="fas fa-briefcase mr-2"></i>Experience</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="education-tab" data-toggle="pill" href="#education" role="tab"><i
+                      class="fas fa-graduation-cap mr-2"></i>Education</a>
+                </li> -->
+            </ul>
+
+            <!-- Tabs Content -->
+            <div class="tab-content" id="profileTabsContent">
+              <!-- Activity Tab -->
+              <div class="tab-pane fade " id="transaction" role="tabpanel">
+                <div class="card p-0">
+                  <div class="card-body p-0">
+                    <table class="table table-sm" style="font-size: 0.875rem;">
+                      <thead class="text-white" style="background-color: #6777ef;">
+                        <tr>
+                          <th scope="col" class="pl-3 py-2"><i class="fas fa-hashtag mr-1"></i> ID</th>
+                          <th scope="col" class="py-2"><i class="fas fa-user mr-1"></i> Name</th>
+                          <th scope="col" class="py-2"><i class="fas fa-calendar-alt mr-1"></i> Date</th>
+                          <th scope="col" class="pr-3 py-2"><i class="fas fa-check-circle mr-1"></i> Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="pl-3 py-2">001</td>
+                          <td class="py-2">John Doe</td>
+                          <td class="py-2">2023-05-15</td>
+                          <td class="pr-3 py-2"><span class="badge badge-success">Active</span></td>
+                        </tr>
+                        <tr>
+                          <td class="pl-3 py-2">002</td>
+                          <td class="py-2">Jane Smith</td>
+                          <td class="py-2">2023-06-20</td>
+                          <td class="pr-3 py-2"><span class="badge badge-warning">Pending</span></td>
+                        </tr>
+                        <tr>
+                          <td class="pl-3 py-2">003</td>
+                          <td class="py-2">Robert Johnson</td>
+                          <td class="py-2">2023-07-10</td>
+                          <td class="pr-3 py-2"><span class="badge badge-danger">Inactive</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Projects Tab -->
+              <div class="tab-pane fade show active" id="links" role="tabpanel">
+                <div class="profile-card">
+                  <div class="row">
+                    <!-- Tracking Link Box -->
+                    <div class="col-md-6 border-right border-primary">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="mb-0 font-weight-bold">
+                              <i class="fas fa-link text-primary mr-2"></i> Tracking Link
+                            </h6>
+                          </div>
+                          <div class="input-group">
+                            <input type="text" class="form-control form-control-sm" id="trackingLink"
+                              value="https://example.com/track/abc123" readonly>
+                            <div class="input-group-append">
+                              <button class="btn btn-sm btn-outline-primary copy-btn" data-target="#trackingLink"
+                                type="button">
+                                <i class="far fa-copy"></i> Copy
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Short Link Box -->
+                    <div class="col-md-6">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="mb-0 font-weight-bold">
+                              <i class="fas fa-compress-alt text-primary mr-2"></i> Short Link
+                            </h6>
+                          </div>
+                          <div class="input-group">
+                            <input type="text" class="form-control form-control-sm" id="shortLink"
+                              value="https://exmpl.co/abc123" readonly>
+                            <div class="input-group-append">
+                              <button class="btn btn-sm btn-outline-primary copy-btn" data-target="#shortLink"
+                                type="button">
+                                <i class="far fa-copy"></i> Copy
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Experience Tab -->
+              <!-- <div class="tab-pane fade" id="experience" role="tabpanel">
+                  <div class="profile-card">
+                    <div class="card-body">
+                      <div class="timeline">
+                        <div class="timeline-item mb-4">
+                          <div class="timeline-badge bg-primary text-white"><i class="fas fa-briefcase"></i></div>
+                          <div class="timeline-content">
+                            <h6 class="mb-1">Senior UI/UX Designer</h6>
+                            <p class="text-muted mb-1">TechSolutions Inc.</p>
+                            <small class="text-muted">2019 - Present</small>
+                            <p class="mt-2 mb-0">Lead designer for all web and mobile applications.</p>
+                          </div>
+                        </div>
+                        <div class="timeline-item mb-4">
+                          <div class="timeline-badge bg-primary text-white"><i class="fas fa-briefcase"></i></div>
+                          <div class="timeline-content">
+                            <h6 class="mb-1">UI Designer</h6>
+                            <p class="text-muted mb-1">Digital Creations</p>
+                            <small class="text-muted">2017 - 2019</small>
+                            <p class="mt-2 mb-0">Designed interfaces for client websites and applications.</p>
+                          </div>
+                        </div>
+                        <div class="timeline-item">
+                          <div class="timeline-badge bg-primary text-white"><i class="fas fa-briefcase"></i></div>
+                          <div class="timeline-content">
+                            <h6 class="mb-1">Junior Designer</h6>
+                            <p class="text-muted mb-1">WebWorks Agency</p>
+                            <small class="text-muted">2015 - 2017</small>
+                            <p class="mt-2 mb-0">Assisted senior designers and created marketing materials.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+
+              <!-- Education Tab -->
+              <!-- <div class="tab-pane fade" id="education" role="tabpanel">
+                  <div class="profile-card">
+                    <div class="card-body">
+                      <div class="timeline">
+                        <div class="timeline-item mb-4">
+                          <div class="timeline-badge bg-primary text-white"><i class="fas fa-graduation-cap"></i></div>
+                          <div class="timeline-content">
+                            <h6 class="mb-1">Master's in Interaction Design</h6>
+                            <p class="text-muted mb-1">Stanford University</p>
+                            <small class="text-muted">2013 - 2015</small>
+                            <p class="mt-2 mb-0">Specialized in human-computer interaction and user experience.</p>
+                          </div>
+                        </div>
+                        <div class="timeline-item">
+                          <div class="timeline-badge bg-primary text-white"><i class="fas fa-graduation-cap"></i></div>
+                          <div class="timeline-content">
+                            <h6 class="mb-1">Bachelor's in Graphic Design</h6>
+                            <p class="text-muted mb-1">California College of Arts</p>
+                            <small class="text-muted">2009 - 2013</small>
+                            <p class="mt-2 mb-0">Focused on visual communication and digital media.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="main-footer">
+        <div class="footer-left">
+          <a href="templateshub.net">Templateshub</a></a>
+        </div>
+        <div class="footer-right">
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- General JS Scripts -->
+  <script src="assets/js/app.min.js"></script>
+  <!-- Template JS File -->
+  <script src="assets/js/scripts.js"></script>
+  <!-- Custom JS File -->
+  <script src="assets/js/custom.js"></script>
+</body>
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const target = this.getAttribute('data-target');
+    const input = document.querySelector(target);
+    input.select();
+    document.execCommand('copy');
+    
+    // Visual feedback
+    const originalText = this.innerHTML;
+    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    setTimeout(() => {
+      this.innerHTML = originalText;
+    }, 2000);
+  });
+});
+</script>
+<!-- index.html  21 Nov 2019 03:47:04 GMT -->
+
+</html>
