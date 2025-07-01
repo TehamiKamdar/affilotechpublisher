@@ -3,6 +3,7 @@
 
 
 <!-- index.html  21 Nov 2019 03:44:50 GMT -->
+
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -16,6 +17,66 @@
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
 </head>
+<style>
+  .metric-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .metric-card .card-header {
+    background-color: white;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .metric-card .card-body {
+    padding: 1.5rem;
+  }
+
+  .metric-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  .metric-label {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .metric-change {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  .metric-change.up {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+  }
+
+  .metric-change.down {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+  }
+</style>
 
 <body class="">
   <div class="loader"></div>
@@ -44,7 +105,8 @@
             </li>
             <li class="menu-header">advertisers management</li>
             <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Advertisers</span></a>
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="copy"></i><span>Advertisers</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./my-advertisers.html">My Advertisers</a></li>
                 <li><a class="nav-link" href="#">New Advertisers</a></li>
@@ -53,7 +115,8 @@
             </li>
             <li class="menu-header">reports management</li>
             <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Reporting</span></a>
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="copy"></i><span>Reporting</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./transactions.html">Transactions</a></li>
                 <li><a class="nav-link" href="./performance.html">Performance</a></li>
@@ -61,7 +124,8 @@
             </li>
             <li class="menu-header">creativity</li>
             <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Promotional</span></a>
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="copy"></i><span>Promotional</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./coupons.html">Coupons</a></li>
                 <li><a class="nav-link" href="./deep-links.html">Deep Links</a></li>
@@ -95,91 +159,178 @@
                   <a href="#" class="has-dropdown">Payment Info</a>
                   <ul class="dropdown-menu">
                     <li><a href="./billing.html">Billing</a></li>
-                    <li><a href="./payments.html">Payments</a></li>
-                    <li><a href="#">Invoices</a></li>
                   </ul>
                 </li>
                 <li><a class="nav-link" href="./settings.html">Settings</a></li>
                 <li><a class="nav-link" href="#">Logout</a></li>
               </ul>
             </li>
-            
+
           </ul>
         </aside>
       </div>
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
-          <div class="row ">
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">Total Transactions</h5>
-                          <h2 class="mb-3 font-18">258</h2>
-                          <p class="mb-0"><span class="col-green">10%</span> Increase</p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/1.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          <!-- Metrics Row -->
+          <div class="row">
+            <!-- Total Transactions -->
+            <div class="col-md-6 col-lg-3">
+              <div class="metric-card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                  <span>Transactions</span>
+                  <i class="fas fa-exchange-alt text-primary"></i>
+                </div>
+                <div class="card-body">
+                  <div class="metric-value">12,548</div>
+                  <div class="metric-label">Total Transactions</div>
+                  <span class="metric-change up">
+                    <i class="fas fa-arrow-up mr-1"></i> 12.5%
+                  </span>
                 </div>
               </div>
             </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">Total Commission</h5>
-                          <h2 class="mb-3 font-18">128</h2>
-                          <p class="mb-0"><span class="col-green">18%</span>
-                            Increase</p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/3.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
+            <!-- Total Sales -->
+            <div class="col-md-6 col-lg-3">
+              <div class="metric-card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                  <span>Sales</span>
+                  <i class="fas fa-shopping-cart text-primary"></i>
+                </div>
+                <div class="card-body">
+                  <div class="metric-value">$84,725</div>
+                  <div class="metric-label">Total Sales</div>
+                  <span class="metric-change up">
+                    <i class="fas fa-arrow-up mr-1"></i> 8.3%
+                  </span>
                 </div>
               </div>
             </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">Total Sales</h5>
-                          <h2 class="mb-3 font-18">$48,697</h2>
-                          <p class="mb-0"><span class="col-green">42%</span> Increase</p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/4.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
+            <!-- Total Commission -->
+            <div class="col-md-6 col-lg-3">
+              <div class="metric-card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                  <span>Commission</span>
+                  <i class="fas fa-hand-holding-usd text-primary"></i>
+                </div>
+                <div class="card-body">
+                  <div class="metric-value">$12,345</div>
+                  <div class="metric-label">Total Commission</div>
+                  <span class="metric-change down">
+                    <i class="fas fa-arrow-down mr-1"></i> 2.1%
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Total Clicks -->
+            <div class="col-md-6 col-lg-3">
+              <div class="metric-card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                  <span>Clicks</span>
+                  <i class="fas fa-mouse-pointer text-primary"></i>
+                </div>
+                <div class="card-body">
+                  <div class="metric-value">245,871</div>
+                  <div class="metric-label">Total Clicks</div>
+                  <span class="metric-change up">
+                    <i class="fas fa-arrow-up mr-1"></i> 15.7%
+                  </span>
                 </div>
               </div>
             </div>
           </div>
+
         </section>
+
+        <section class="section">
+            <div class="card">
+              <div class="card-header">
+                <!-- Top Performing Advertisers -->
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>Advertiser</th>
+                        <th>Transactions</th>
+                        <th>Sales</th>
+                        <th>Commission</th>
+                        <th>Clicks</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <img src="https://placehold.co/30x30/000000/FFFFFF?text=Nike&font=roboto"
+                            class="rounded-circle mr-2" alt="Brand">
+                          Nike Inc.
+                        </td>
+                        <td>1,245,678</td>
+                        <td>$45,672</td>
+                        <td>3.67%</td>
+                        <td>12,450</td>
+                        <td><span class="badge badge-primary">Active</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img src="https://placehold.co/30x30/F40009/FFFFFF?text=Coca-Cola&font=roboto"
+                            class="rounded-circle mr-2" alt="Brand">
+                          Coca-Cola
+                        </td>
+                        <td>987,654</td>
+                        <td>$32,109</td>
+                        <td>3.25%</td>
+                        <td>9,876</td>
+                        <td><span class="badge badge-primary">Active</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img src="https://placehold.co/30x30/FFFFFF/000000?text=Apple&font=roboto"
+                            class="rounded-circle mr-2" alt="Brand">
+                          Apple
+                        </td>
+                        <td>876,543</td>
+                        <td>$28,765</td>
+                        <td>3.28%</td>
+                        <td>8,765</td>
+                        <td><span class="badge badge-warning">Paused</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img src="https://placehold.co/30x30/FF9900/000000?text=Amazon&font=roboto"
+                            class="rounded-circle mr-2" alt="Brand">
+                          Amazon
+                        </td>
+                        <td>765,432</td>
+                        <td>$24,543</td>
+                        <td>3.21%</td>
+                        <td>7,654</td>
+                        <td><span class="badge badge-primary">Active</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img src="https://placehold.co/30x30/1428A0/FFFFFF?text=Samsung&font=roboto"
+                            class="rounded-circle mr-2" alt="Brand">
+                          Samsung
+                        </td>
+                        <td>654,321</td>
+                        <td>$21,098</td>
+                        <td>3.23%</td>
+                        <td>6,543</td>
+                        <td><span class="badge badge-success">Completed</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+          </div>
+        </section>
+
       </div>
       <footer class="main-footer">
         <div class="footer-left">
@@ -204,4 +355,5 @@
 
 
 <!-- index.html  21 Nov 2019 03:47:04 GMT -->
+
 </html>

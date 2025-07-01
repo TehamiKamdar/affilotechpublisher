@@ -18,14 +18,6 @@
   <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
 </head>
 <style>
-  :root {
-    --primary-color: #6777ef;
-    --primary-light: #8594f4;
-    --primary-dark: #5666d6;
-    --text-light: #fff;
-    --text-dark: #343a40;
-  }
-
   .profile-header {
     /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); */
     background: var(--primary-color);
@@ -158,55 +150,7 @@
     font-weight: 500;
   }
 
-  /* Previous styles remain the same */
-
-  /* Add these new styles for timeline */
-  .timeline {
-    position: relative;
-    padding-left: 50px;
-  }
-
-  .timeline:before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #e9ecef;
-  }
-
-  .timeline-item {
-    position: relative;
-    margin-bottom: 30px;
-  }
-
-  .timeline-badge {
-    position: absolute;
-    left: -50px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-  }
-
-  .timeline-content {
-    padding: 15px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  }
-
-  .timeline-item:last-child {
-    margin-bottom: 0;
-  }
-
-
   select option {
-    padding: 12px 16px;
     background-color: white;
     color: var(--primary-color);
     font-weight: 500;
@@ -233,9 +177,32 @@
     transition: all 0.3s ease;
   }
 
+  select[multiple] {
+    height: 100px !important;
+  }
+
   .form-control:focus {
     box-shadow: none;
     border-color: var(--primary-color);
+  }
+    .payment-option {
+    margin-bottom: 1rem;
+  }
+
+  .payment-label {
+    display: flex;
+    padding: 1.5rem;
+    border: 2px solid #ccc;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #f9f9f9;
+  }
+
+  .payment-option input:checked+.payment-label {
+    border-color: #007bff;
+    background-color: #e7f1ff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
   }
 </style>
 
@@ -247,9 +214,8 @@
       <nav class="navbar navbar-expand-lg main-navbar sticky">
         <div class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">
-            <li><a href="#" data-toggle="sidebar"
-                class="bg-white rounded-circle nav-link nav-link-lg       collapse-btn"> <i
-                  data-feather="align-justify"></i></a></li>
+            <li><a href="#" data-toggle="sidebar" class="bg-white rounded-circle nav-link nav-link-lg
+									collapse-btn"> <i data-feather="align-justify"></i></a></li>
           </ul>
         </div>
       </nav>
@@ -315,12 +281,12 @@
             <li class="dropdown active">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Settings</span></a>
               <ul class="dropdown-menu">
-                <li class="active"><a class="nav-link" href="./my-profile.html">Profile</a></li>
+                <li><a class="nav-link" href="./my-profile.html">Profile</a></li>
                 <li><a class="nav-link" href="./webs.html">Websites</a></li>
                 <li class="dropdown">
                   <a href="#" class="has-dropdown">Payment Info</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="./billing.html">Billing</a></li>
+                  <ul class="dropdown-menu" style="display: block;">
+                    <li class="active"><a href="./billing.html">Billing</a></li>
                   </ul>
                 </li>
                 <li><a class="nav-link" href="./settings.html">Settings</a></li>
@@ -390,7 +356,7 @@
             <!-- Tabs Navigation -->
             <ul class="nav nav-pills mb-2" id="profileTabs" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" id="activity-tab" href="my-profile.html">
+                <a class="nav-link" id="activity-tab" href="my-profile.html">
                   <i class="fas fa-info-circle mr-2"></i>Introduction
                 </a>
               </li>
@@ -400,7 +366,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="experience-tab" href="billing.html">
+                <a class="nav-link active" id="experience-tab" href="billing.html">
                   <i class="fas fa-credit-card mr-2"></i>Billing
                 </a>
               </li>
@@ -412,170 +378,172 @@
             </ul>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-            <div class="card-body">
-              <form action="#" method="POST" enctype="multipart/form-data">
-            <!-- Name & Username -->
-            <div class="row mb-4">
-              <div class="col-md-6">
-                <label class="form-label required">Full Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Your full name" />
-              </div>
-              <div class="col-md-6">
-                <label class="form-label required">Username</label>
-                <input type="text" name="user_name" class="form-control" placeholder="User name" />
-              </div>
-            </div>
-
-            <!-- Bio -->
-            <div class="mb-4">
-              <label class="form-label required">Bio</label>
-              <small class="text-muted d-block mb-1">Tell advertisers about yourself and what you're looking
-                for.</small>
-              <textarea name="bio" rows="4" class="form-control" placeholder="Write your bio here..."></textarea>
-            </div>
-
-            <!-- Region & Language -->
-            <div class="row mb-4">
-              <div class="col-md-6">
-                <label class="form-label required">Target Region</label>
-                <select name="country" class="form-control">
-                  <option value="">Select a Country...</option>
-                  <option value="United States">United States</option>
-                  <option value="United Kingdom">United Kingdom</option>
-                  <option value="Canada">Canada</option>
-                  <!-- Add more countries as needed -->
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label required">Language</label>
-                <select name="language" class="form-control">
-                  <option value="">Select a Language...</option>
-                  <option value="English">English</option>
-                  <option value="Spanish">Spanish</option>
-                  <option value="French">French</option>
-                  <!-- Add more languages as needed -->
-                </select>
-              </div>
-            </div>
-
-            <!-- Gender & DOB -->
-            <div class="row mb-4">
-              <div class="col-md-6">
-                <label class="form-label required">Gender</label>
-                <select name="gender" class="form-control">
-                  <option value="">Select Gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="nonbinary">Nonbinary</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label required">Date of Birth</label>
-                <input type="date" name="dob" class="form-control" />
-              </div>
-            </div>
-
-            <!-- Address -->
-            <div class="mb-4">
-              <label class="form-label required">Address</label>
-              <input type="text" name="location_address_1" class="form-control" placeholder="Enter your address" />
-            </div>
-
-            <!-- Location Fields -->
-            <div class="row mb-4">
-              <div class="col-md-4">
-                <label class="form-label required">Country</label>
-                <select name="location_country" class="form-control">
-                  <option value="">Select Country</option>
-                  <option value="1">United States</option>
-                  <option value="2">United Kingdom</option>
-                  <!-- Add more countries as needed -->
-                </select>
-              </div>
-              <div class="col-md-4">
-                <label class="form-label required">State</label>
-                <select name="location_state" class="form-control">
-                  <option value="">Select State</option>
-                  <option value="1">California</option>
-                  <option value="2">New York</option>
-                  <!-- Add more states as needed -->
-                </select>
-              </div>
-              <div class="col-md-4">
-                <label class="form-label required">City</label>
-                <select name="location_city" class="form-control">
-                  <option value="">Select City</option>
-                  <option value="1">Los Angeles</option>
-                  <option value="2">New York City</option>
-                  <!-- Add more cities as needed -->
-                </select>
-              </div>
-            </div>
-
-            <!-- Media Kit -->
-            <div class="mb-4">
-              <label class="form-label">Media Kit</label>
-              <input type="file" name="mediakit_image" class="form-control border-0 mb-3" />
-              <div class="table-responsive">
-                <table class="table table-bordered text-center">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Size</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="text-start"><a href="#" target="_blank">Sample Media Kit.pdf</a></td>
-                      <td>245 Kb</td>
-                      <td>
-                        <a href="#" class="text-danger"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="text-start"><a href="#" target="_blank">Profile Overview.docx</a></td>
-                      <td>178 Kb</td>
-                      <td>
-                        <a href="#" class="text-danger"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <!-- Avatar -->
-            <div class="mb-4">
-              <label class="form-label">Profile Image</label>
-              <div class="d-flex align-items-center">
-                <div class="me-3">
-                  <img src="https://placehold.co/70" class="rounded-circle" width="70" height="70"
-                    alt="Profile" />
+        <div class="card mb-4">
+          <div class="card-header">
+            <h6>Billing Information</h6>
+          </div>
+          <form action="#" method="post">
+            <div class="card-body border-top">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="billing_name">Billing Name</label>
                 </div>
-                <div>
-                  <input type="file" name="avatar" class="form-control border-0" accept=".png, .jpg, .jpeg" />
-                  <small class="form-text text-muted">Allowed file types: png, jpg, jpeg.</small>
+                <div class="col-md-6">
+                  <input type="text" name="billing_name" id="billing_name" placeholder="Enter Your Billing Name"
+                    class="form-control" required>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="billing_phone">Billing Phone</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" name="billing_phone" id="billing_phone" placeholder="Enter Your Billing Phone"
+                    class="form-control" required>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="billing_address">Billing Address</label>
+                </div>
+                <div class="col-md-6">
+                  <textarea name="billing_address" id="billing_address" placeholder="Write Your Billing Address Here.."
+                    class="form-control" required></textarea>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label>Country / State / City</label>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group col-4">
+                      <select class="form-control" required>
+                        <option disabled selected value="">Select Country..</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-4">
+                      <select class="form-control" required>
+                        <option disabled selected value="">Select State..</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-4">
+                      <select class="form-control" required>
+                        <option disabled selected value="">Select City..</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- Submit -->
-            <div class="text-end">
-              <button type="submit" class="btn btn-primary px-4"
-                style="background-color: #6777ef; border-color: #6777ef;">
-                Update Profile
-              </button>
+            <div class="card-body border-top">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="company_reg_no">Company Registration Number</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" name="company_reg_no" id="company_reg_no"
+                    placeholder="Enter Your Company Registration Number" class="form-control" required>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="tax_vat_no">TAX/VAT Number</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" name="tax_vat_no" id="tax_vat_no" placeholder="Enter Your TAX/VAT Number"
+                    class="form-control" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-footer border-top">
+              <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary btn-sm mb-3">Update</button>
+              </div>
             </div>
           </form>
-            </div>
-          </div>
-          </div>
+        </div>
 
+        <!-- Payment Information -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h6>Payment Information</h6>
+          </div>
+          <form action="" method="post">
+            <div class="card-body border-top">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="payment_frequency">Payment Frequency</label>
+                  <select name="payment_frequency" id="payment_frequency" class="form-control">
+                    <option disabled selected>Please Select</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="45_days">Every 45 Days</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="payment_threshold">Payment Threshold</label>
+                  <select name="payment_threshold" id="payment_threshold" class="form-control">
+                    <option disabled selected>Please Select</option>
+                    <option value="100">$100</option>
+                    <option value="500">$500</option>
+                    <option value="1000">$1000</option>
+                    <option value="2500">$2500</option>
+                    <option value="5000">$5000</option>
+                    <option value="10000">$10000</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body border-top">
+              <h6>Payment Methods</h6>
+              <p class="small text-muted">Select your active payment method where you want to withdraw funds.</p>
+              <div class="col-12 mt-4">
+                  <form>
+                    <div class="payment-option">
+                      <input type="radio" id="bank" name="payment" value="bank" hidden>
+                      <label for="bank" class="payment-label d-flex align-items-center">
+                        <i class="fas fa-university fa-2x mr-3 text-primary"></i>
+                        <div>
+                          <strong>Bank Transfer</strong>
+                          <div class="text-muted">Transfer via your bank account</div>
+                        </div>
+                      </label>
+                    </div>
+
+                    <div class="payment-option">
+                      <input type="radio" id="paypal" name="payment" value="paypal" hidden>
+                      <label for="paypal" class="payment-label d-flex align-items-center">
+                        <i class="fab fa-paypal fa-2x mr-3 text-info"></i>
+                        <div>
+                          <strong>PayPal</strong>
+                          <div class="text-muted">Secure online payments</div>
+                        </div>
+                      </label>
+                    </div>
+
+                    <div class="payment-option">
+                      <input type="radio" id="payoneer" name="payment" value="payoneer" hidden>
+                      <label for="payoneer" class="payment-label d-flex align-items-center">
+                        <i class="fas fa-money-check-alt fa-2x mr-3 text-warning"></i>
+                        <div>
+                          <strong>Payoneer</strong>
+                          <div class="text-muted">Fast international transfers</div>
+                        </div>
+                      </label>
+                    </div>
+                  </form>
+                </div>
+            </div>
+
+            <div class="card-footer">
+              <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary btn-sm mb-3">Save</button>
+              </div>
+            </div>
+          </form>
         </div>
 
       </div>
@@ -590,6 +558,10 @@
   </div>
   <!-- General JS Scripts -->
   <script src="assets/js/app.min.js"></script>
+  <!-- JS Libraies -->
+  <script src="assets/bundles/apexcharts/apexcharts.min.js"></script>
+  <!-- Page Specific JS File -->
+  <script src="assets/js/page/index.js"></script>
   <!-- Template JS File -->
   <script src="assets/js/scripts.js"></script>
   <!-- Custom JS File -->
