@@ -9230,8 +9230,6 @@ body:not(.sidebar-mini)
 .theme-black .btn-outline-primary.active:not([disabled]):not(.disabled),
 .theme-black .show > .btn-outline-primary.dropdown-toggle {
     color: #fff;
-    background-color: #353c48;
-    border-color: #353c48;
 }
 .theme-black.sidebar-mini .main-sidebar .sidebar-menu > li.active > a {
     background-color: rgba(0, 0, 0, 0.14);

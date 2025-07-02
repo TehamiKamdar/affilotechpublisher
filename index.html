@@ -3,6 +3,7 @@
 
 
 <!-- index.html  21 Nov 2019 03:44:50 GMT -->
+
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -12,10 +13,24 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
 </head>
+<style>
+  /* Optional: adjust Swiper container height */
+  .swiper {
+    padding: 20px;
+  }
+
+
+
+  .swiper-slide {
+    width: auto;
+    /* let card width decide slide size */
+  }
+</style>
 
 <body class="">
   <div class="loader"></div>
@@ -44,7 +59,8 @@
             </li>
             <li class="menu-header">advertisers management</li>
             <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Advertisers</span></a>
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="copy"></i><span>Advertisers</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./my-advertisers.html">My Advertisers</a></li>
                 <li><a class="nav-link" href="#">New Advertisers</a></li>
@@ -53,7 +69,8 @@
             </li>
             <li class="menu-header">reports management</li>
             <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Reporting</span></a>
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="copy"></i><span>Reporting</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./transactions.html">Transactions</a></li>
                 <li><a class="nav-link" href="./performance.html">Performance</a></li>
@@ -61,7 +78,8 @@
             </li>
             <li class="menu-header">creativity</li>
             <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Promotional</span></a>
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="copy"></i><span>Promotional</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./coupons.html">Coupons</a></li>
                 <li><a class="nav-link" href="./deep-links.html">Deep Links</a></li>
@@ -101,7 +119,7 @@
                 <li><a class="nav-link" href="#">Logout</a></li>
               </ul>
             </li>
-            
+
           </ul>
         </aside>
       </div>
@@ -200,446 +218,336 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-12 col-sm-12 col-lg-12">
+            <div class="col-12">
               <div class="card ">
                 <div class="card-header">
-                  <h4>Revenue chart</h4>
-                  <div class="card-header-action">
-                    <div class="dropdown">
-                      <a href="#" data-toggle="dropdown" class="btn btn-warning dropdown-toggle">Options</a>
-                      <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item has-icon"><i class="fas fa-eye"></i> View</a>
-                        <a href="#" class="dropdown-item has-icon"><i class="far fa-edit"></i> Edit</a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item has-icon text-danger"><i class="far fa-trash-alt"></i>
-                          Delete</a>
-                      </div>
-                    </div>
-                    <a href="#" class="btn btn-primary">View All</a>
-                  </div>
+                  <h4>Sales Chart (Current Month)</h4>
                 </div>
                 <div class="card-body">
                   <div class="row">
-                    <div class="col-lg-9">
-                      <div id="chart1"></div>
+                    <div class="col-lg-12 ">
+                      <div id="chart1" style="height: 300px;"></div>
                       <div class="row mb-0">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                           <div class="list-inline text-center">
-                            <div class="list-inline-item p-r-30"><i data-feather="arrow-up-circle"
-                                class="col-green"></i>
+                            <div class="list-inline-item p-r-30">
                               <h5 class="m-b-0">$675</h5>
-                              <p class="text-muted font-14 m-b-0">Weekly Earnings</p>
+                              <p class="text-muted font-14 m-b-0">Total</p>
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                           <div class="list-inline text-center">
-                            <div class="list-inline-item p-r-30"><i data-feather="arrow-down-circle"
-                                class="col-orange"></i>
+                            <div class="list-inline-item p-r-30">
                               <h5 class="m-b-0">$1,587</h5>
-                              <p class="text-muted font-14 m-b-0">Monthly Earnings</p>
+                              <p class="text-muted font-14 m-b-0">Approved</p>
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                           <div class="list-inline text-center">
-                            <div class="list-inline-item p-r-30"><i data-feather="arrow-up-circle"
-                                class="col-green"></i>
+                            <div class="list-inline-item p-r-30">
                               <h5 class="mb-0 m-b-0">$45,965</h5>
-                              <p class="text-muted font-14 m-b-0">Yearly Earnings</p>
+                              <p class="text-muted font-14 m-b-0">Pending</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                          <div class="list-inline text-center">
+                            <div class="list-inline-item p-r-30">
+                              <h5 class="mb-0 m-b-0">$45,965</h5>
+                              <p class="text-muted font-14 m-b-0">Rejected</p>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-3">
-                      <div class="row mt-5">
-                        <div class="col-7 col-xl-7 mb-3">Total customers</div>
-                        <div class="col-5 col-xl-5 mb-3">
-                          <span class="text-big">8,257</span>
-                          <sup class="col-green">+09%</sup>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h4>Advertisers</h4>
+            </div>
+            <div class="card-body">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <!-- Slide 1 -->
+                  <div class="swiper-slide">
+                    <div class="advertiser-card card h-100 border-0 shadow-sm" style="width: 300px;">
+                      <div class="card-header d-flex justify-content-between align-items-center"
+                        style="background-color: #6777ef; color: white;">
+                        <h5 class="mb-0">Advertiser Name</h5>
+                        <span class="badge badge-pill badge-danger">Inactive</span>
+                      </div>
+                      <div class="card-body">
+                        <div class="advertiser-attributes">
+                          <div class="attribute-item">
+                            <i class="fas fa-percentage mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Commission:</span>
+                            <span class="attribute-value">15%</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-map-marker-alt mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Region:</span>
+                            <span class="attribute-value">North America</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-calendar-alt mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Since:</span>
+                            <span class="attribute-value">Jan 2022</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-tags mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Category:</span>
+                            <span class="attribute-value">Technology</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-star mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Rating:</span>
+                            <span class="attribute-value">4.8/5</span>
+                          </div>
                         </div>
-                        <div class="col-7 col-xl-7 mb-3">Total Income</div>
-                        <div class="col-5 col-xl-5 mb-3">
-                          <span class="text-big">$9,857</span>
-                          <sup class="text-danger">-18%</sup>
-                        </div>
-                        <div class="col-7 col-xl-7 mb-3">Project completed</div>
-                        <div class="col-5 col-xl-5 mb-3">
-                          <span class="text-big">28</span>
-                          <sup class="col-green">+16%</sup>
-                        </div>
-                        <div class="col-7 col-xl-7 mb-3">Total expense</div>
-                        <div class="col-5 col-xl-5 mb-3">
-                          <span class="text-big">$6,287</span>
-                          <sup class="col-green">+09%</sup>
-                        </div>
-                        <div class="col-7 col-xl-7 mb-3">New Customers</div>
-                        <div class="col-5 col-xl-5 mb-3">
-                          <span class="text-big">684</span>
-                          <sup class="col-green">+22%</sup>
+                      </div>
+                      <div class="card-footer">
+                        <div class="row justify-content-around">
+                          <a href="./view-advertisers.html" class="btn btn-sm"
+                            style="background-color: #6777ef; color: white;">View Details</a>
+                          <button class="btn btn-sm btn-success" style="color: white;">Active</button>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 col-sm-12 col-lg-4">
-              <div class="card">
-                <div class="card-header">
-                  <h4>Chart</h4>
-                </div>
-                <div class="card-body">
-                  <div id="chart4" class="chartsh"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-12 col-lg-4">
-              <div class="card">
-                <div class="card-header">
-                  <h4>Chart</h4>
-                </div>
-                <div class="card-body">
-                  <div class="summary">
-                    <div class="summary-chart active" data-tab-group="summary-tab" id="summary-chart">
-                      <div id="chart3" class="chartsh"></div>
-                    </div>
-                    <div data-tab-group="summary-tab" id="summary-text">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-12 col-lg-4">
-              <div class="card">
-                <div class="card-header">
-                  <h4>Chart</h4>
-                </div>
-                <div class="card-body">
-                  <div id="chart2" class="chartsh"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4>Assign Task Table</h4>
-                  <div class="card-header-form">
-                    <form>
-                      <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <div class="input-group-btn">
-                          <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide">
+                    <div class="advertiser-card card h-100 border-0 shadow-sm" style="width: 300px;">
+                      <div class="card-header d-flex justify-content-between align-items-center"
+                        style="background-color: #6777ef; color: white;">
+                        <h5 class="mb-0">Advertiser Two</h5>
+                        <span class="badge badge-pill badge-success">Active</span>
+                      </div>
+                      <div class="card-body">
+                        <div class="advertiser-attributes">
+                          <div class="attribute-item">
+                            <i class="fas fa-percentage mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Commission:</span>
+                            <span class="attribute-value">12%</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-map-marker-alt mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Region:</span>
+                            <span class="attribute-value">Europe</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-calendar-alt mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Since:</span>
+                            <span class="attribute-value">Mar 2021</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-tags mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Category:</span>
+                            <span class="attribute-value">Finance</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-star mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Rating:</span>
+                            <span class="attribute-value">4.5/5</span>
+                          </div>
                         </div>
                       </div>
-                    </form>
+                      <div class="card-footer">
+                        <div class="row justify-content-around">
+                          <a href="./view-advertisers.html" class="btn btn-sm"
+                            style="background-color: #6777ef; color: white;">View Details</a>
+                          <button class="btn btn-sm btn-success" style="color: white;">Active</button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide">
+                    <div class="advertiser-card card h-100 border-0 shadow-sm" style="width: 300px;">
+                      <div class="card-header d-flex justify-content-between align-items-center"
+                        style="background-color: #6777ef; color: white;">
+                        <h5 class="mb-0">Advertiser Two</h5>
+                        <span class="badge badge-pill badge-success">Active</span>
+                      </div>
+                      <div class="card-body">
+                        <div class="advertiser-attributes">
+                          <div class="attribute-item">
+                            <i class="fas fa-percentage mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Commission:</span>
+                            <span class="attribute-value">12%</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-map-marker-alt mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Region:</span>
+                            <span class="attribute-value">Europe</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-calendar-alt mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Since:</span>
+                            <span class="attribute-value">Mar 2021</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-tags mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Category:</span>
+                            <span class="attribute-value">Finance</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-star mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Rating:</span>
+                            <span class="attribute-value">4.5/5</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <div class="row justify-content-around">
+                          <a href="./view-advertisers.html" class="btn btn-sm"
+                            style="background-color: #6777ef; color: white;">View Details</a>
+                          <button class="btn btn-sm btn-success" style="color: white;">Active</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide">
+                    <div class="advertiser-card card h-100 border-0 shadow-sm" style="width: 300px;">
+                      <div class="card-header d-flex justify-content-between align-items-center"
+                        style="background-color: #6777ef; color: white;">
+                        <h5 class="mb-0">Advertiser Two</h5>
+                        <span class="badge badge-pill badge-success">Active</span>
+                      </div>
+                      <div class="card-body">
+                        <div class="advertiser-attributes">
+                          <div class="attribute-item">
+                            <i class="fas fa-percentage mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Commission:</span>
+                            <span class="attribute-value">12%</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-map-marker-alt mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Region:</span>
+                            <span class="attribute-value">Europe</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-calendar-alt mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Since:</span>
+                            <span class="attribute-value">Mar 2021</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-tags mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Category:</span>
+                            <span class="attribute-value">Finance</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-star mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Rating:</span>
+                            <span class="attribute-value">4.5/5</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <div class="row justify-content-around">
+                          <a href="./view-advertisers.html" class="btn btn-sm"
+                            style="background-color: #6777ef; color: white;">View Details</a>
+                          <button class="btn btn-sm btn-success" style="color: white;">Active</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide">
+                    <div class="advertiser-card card h-100 border-0 shadow-sm" style="width: 300px;">
+                      <div class="card-header d-flex justify-content-between align-items-center"
+                        style="background-color: #6777ef; color: white;">
+                        <h5 class="mb-0">Advertiser Two</h5>
+                        <span class="badge badge-pill badge-success">Active</span>
+                      </div>
+                      <div class="card-body">
+                        <div class="advertiser-attributes">
+                          <div class="attribute-item">
+                            <i class="fas fa-percentage mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Commission:</span>
+                            <span class="attribute-value">12%</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-map-marker-alt mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Region:</span>
+                            <span class="attribute-value">Europe</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-calendar-alt mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Since:</span>
+                            <span class="attribute-value">Mar 2021</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-tags mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Category:</span>
+                            <span class="attribute-value">Finance</span>
+                          </div>
+                          <div class="attribute-item">
+                            <i class="fas fa-star mr-2" style="color: #6777ef;"></i>
+                            <span class="attribute-label">Rating:</span>
+                            <span class="attribute-value">4.5/5</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <div class="row justify-content-around">
+                          <a href="./view-advertisers.html" class="btn btn-sm"
+                            style="background-color: #6777ef; color: white;">View Details</a>
+                          <button class="btn btn-sm btn-success" style="color: white;">Active</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Add more slides as needed -->
                 </div>
-                <div class="card-body p-0">
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <tr>
-                        <th class="text-center">
-                          <div class="custom-checkbox custom-checkbox-table custom-control">
-                            <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
-                              class="custom-control-input" id="checkbox-all">
-                            <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
-                          </div>
-                        </th>
-                        <th>Task Name</th>
-                        <th>Members</th>
-                        <th>Task Status</th>
-                        <th>Assigh Date</th>
-                        <th>Due Date</th>
-                        <th>Priority</th>
-                        <th>Action</th>
-                      </tr>
-                      <tr>
-                        <td class="p-0 text-center">
-                          <div class="custom-checkbox custom-control">
-                            <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                              id="checkbox-1">
-                            <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
-                          </div>
-                        </td>
-                        <td>Create a mobile app</td>
-                        <td class="text-truncate">
-                          <ul class="list-unstyled order-list m-b-0 m-b-0">
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-8.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="Wildan Ahdian"></li>
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-9.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="John Deo"></li>
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-10.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="Sarah Smith"></li>
-                            <li class="avatar avatar-sm"><span class="badge badge-primary">+4</span></li>
-                          </ul>
-                        </td>
-                        <td class="align-middle">
-                          <div class="progress-text">50%</div>
-                          <div class="progress" data-height="6">
-                            <div class="progress-bar bg-success" data-width="50%"></div>
-                          </div>
-                        </td>
-                        <td>2018-01-20</td>
-                        <td>2019-05-28</td>
-                        <td>
-                          <div class="badge badge-success">Low</div>
-                        </td>
-                        <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td class="p-0 text-center">
-                          <div class="custom-checkbox custom-control">
-                            <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                              id="checkbox-2">
-                            <label for="checkbox-2" class="custom-control-label">&nbsp;</label>
-                          </div>
-                        </td>
-                        <td>Redesign homepage</td>
-                        <td class="text-truncate">
-                          <ul class="list-unstyled order-list m-b-0 m-b-0">
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-1.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="Wildan Ahdian"></li>
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-2.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="John Deo"></li>
-                            <li class="avatar avatar-sm"><span class="badge badge-primary">+2</span></li>
-                          </ul>
-                        </td>
-                        <td class="align-middle">
-                          <div class="progress-text">40%</div>
-                          <div class="progress" data-height="6">
-                            <div class="progress-bar bg-danger" data-width="40%"></div>
-                          </div>
-                        </td>
-                        <td>2017-07-14</td>
-                        <td>2018-07-21</td>
-                        <td>
-                          <div class="badge badge-danger">High</div>
-                        </td>
-                        <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td class="p-0 text-center">
-                          <div class="custom-checkbox custom-control">
-                            <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                              id="checkbox-3">
-                            <label for="checkbox-3" class="custom-control-label">&nbsp;</label>
-                          </div>
-                        </td>
-                        <td>Backup database</td>
-                        <td class="text-truncate">
-                          <ul class="list-unstyled order-list m-b-0 m-b-0">
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-3.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="Wildan Ahdian"></li>
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-4.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="John Deo"></li>
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-5.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="Sarah Smith"></li>
-                            <li class="avatar avatar-sm"><span class="badge badge-primary">+3</span></li>
-                          </ul>
-                        </td>
-                        <td class="align-middle">
-                          <div class="progress-text">55%</div>
-                          <div class="progress" data-height="6">
-                            <div class="progress-bar bg-purple" data-width="55%"></div>
-                          </div>
-                        </td>
-                        <td>2019-07-25</td>
-                        <td>2019-08-17</td>
-                        <td>
-                          <div class="badge badge-info">Average</div>
-                        </td>
-                        <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td class="p-0 text-center">
-                          <div class="custom-checkbox custom-control">
-                            <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                              id="checkbox-4">
-                            <label for="checkbox-4" class="custom-control-label">&nbsp;</label>
-                          </div>
-                        </td>
-                        <td>Android App</td>
-                        <td class="text-truncate">
-                          <ul class="list-unstyled order-list m-b-0 m-b-0">
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-7.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="John Deo"></li>
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-8.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="Sarah Smith"></li>
-                            <li class="avatar avatar-sm"><span class="badge badge-primary">+4</span></li>
-                          </ul>
-                        </td>
-                        <td class="align-middle">
-                          <div class="progress-text">70%</div>
-                          <div class="progress" data-height="6">
-                            <div class="progress-bar" data-width="70%"></div>
-                          </div>
-                        </td>
-                        <td>2018-04-15</td>
-                        <td>2019-07-19</td>
-                        <td>
-                          <div class="badge badge-success">Low</div>
-                        </td>
-                        <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td class="p-0 text-center">
-                          <div class="custom-checkbox custom-control">
-                            <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                              id="checkbox-5">
-                            <label for="checkbox-5" class="custom-control-label">&nbsp;</label>
-                          </div>
-                        </td>
-                        <td>Logo Design</td>
-                        <td class="text-truncate">
-                          <ul class="list-unstyled order-list m-b-0 m-b-0">
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-9.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="Wildan Ahdian"></li>
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-10.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="John Deo"></li>
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-2.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="Sarah Smith"></li>
-                            <li class="avatar avatar-sm"><span class="badge badge-primary">+2</span></li>
-                          </ul>
-                        </td>
-                        <td class="align-middle">
-                          <div class="progress-text">45%</div>
-                          <div class="progress" data-height="6">
-                            <div class="progress-bar bg-cyan" data-width="45%"></div>
-                          </div>
-                        </td>
-                        <td>2017-02-24</td>
-                        <td>2018-09-06</td>
-                        <td>
-                          <div class="badge badge-danger">High</div>
-                        </td>
-                        <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td class="p-0 text-center">
-                          <div class="custom-checkbox custom-control">
-                            <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                              id="checkbox-6">
-                            <label for="checkbox-6" class="custom-control-label">&nbsp;</label>
-                          </div>
-                        </td>
-                        <td>Ecommerce website</td>
-                        <td class="text-truncate">
-                          <ul class="list-unstyled order-list m-b-0 m-b-0">
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-8.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="Wildan Ahdian"></li>
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-9.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="John Deo"></li>
-                            <li class="team-member team-member-sm"><img class="rounded-circle"
-                                src="assets/img/users/user-10.png" alt="user" data-toggle="tooltip" title=""
-                                data-original-title="Sarah Smith"></li>
-                            <li class="avatar avatar-sm"><span class="badge badge-primary">+4</span></li>
-                          </ul>
-                        </td>
-                        <td class="align-middle">
-                          <div class="progress-text">30%</div>
-                          <div class="progress" data-height="6">
-                            <div class="progress-bar bg-orange" data-width="30%"></div>
-                          </div>
-                        </td>
-                        <td>2018-01-20</td>
-                        <td>2019-05-28</td>
-                        <td>
-                          <div class="badge badge-info">Average</div>
-                        </td>
-                        <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
-                      </tr>
-                    </table>
-                  </div>
+
+                <!-- Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Pagination (optional) -->
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-12 col-sm-12 col-lg-4">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Advertisers Summary</h4>
+                </div>
+                <div class="card-body">
+                  <div id="chart2" class="chartsh" style="height: 300px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-lg-8">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Global Advertisers</h4>
+                </div>
+                <div class="card-body">
+                  <div id="chart3" class="chartsh" style="height: 500px;"></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 col-lg-12 col-xl-6">
-              <!-- Support tickets -->
-              <div class="card">
-                <div class="card-header">
-                  <h4>Support Ticket</h4>
-                  <form class="card-header-form">
-                    <input type="text" name="search" class="form-control" placeholder="Search">
-                  </form>
-                </div>
-                <div class="card-body">
-                  <div class="support-ticket media pb-1 mb-3">
-                    <img src="assets/img/users/user-1.png" class="user-img mr-2" alt="">
-                    <div class="media-body ml-3">
-                      <div class="badge badge-pill badge-success mb-1 float-right">Feature</div>
-                      <span class="font-weight-bold">#89754</span>
-                      <a href="javascript:void(0)">Please add advance table</a>
-                      <p class="my-1">Hi, can you please add new table for advan...</p>
-                      <small class="text-muted">Created by <span class="font-weight-bold font-13">John
-                          Deo</span>
-                        &nbsp;&nbsp; - 1 day ago</small>
-                    </div>
-                  </div>
-                  <div class="support-ticket media pb-1 mb-3">
-                    <img src="assets/img/users/user-2.png" class="user-img mr-2" alt="">
-                    <div class="media-body ml-3">
-                      <div class="badge badge-pill badge-warning mb-1 float-right">Bug</div>
-                      <span class="font-weight-bold">#57854</span>
-                      <a href="javascript:void(0)">Select item not working</a>
-                      <p class="my-1">please check select item in advance form not work...</p>
-                      <small class="text-muted">Created by <span class="font-weight-bold font-13">Sarah
-                          Smith</span>
-                        &nbsp;&nbsp; - 2 day ago</small>
-                    </div>
-                  </div>
-                  <div class="support-ticket media pb-1 mb-3">
-                    <img src="assets/img/users/user-3.png" class="user-img mr-2" alt="">
-                    <div class="media-body ml-3">
-                      <div class="badge badge-pill badge-primary mb-1 float-right">Query</div>
-                      <span class="font-weight-bold">#85784</span>
-                      <a href="javascript:void(0)">Are you provide template in Angular?</a>
-                      <p class="my-1">can you provide template in latest angular 8.</p>
-                      <small class="text-muted">Created by <span class="font-weight-bold font-13">Ashton Cox</span>
-                        &nbsp;&nbsp; -2 day ago</small>
-                    </div>
-                  </div>
-                  <div class="support-ticket media pb-1 mb-3">
-                    <img src="assets/img/users/user-6.png" class="user-img mr-2" alt="">
-                    <div class="media-body ml-3">
-                      <div class="badge badge-pill badge-info mb-1 float-right">Enhancement</div>
-                      <span class="font-weight-bold">#25874</span>
-                      <a href="javascript:void(0)">About template page load speed</a>
-                      <p class="my-1">Hi, John, can you work on increase page speed of template...</p>
-                      <small class="text-muted">Created by <span class="font-weight-bold font-13">Hasan
-                          Basri</span>
-                        &nbsp;&nbsp; -3 day ago</small>
-                    </div>
-                  </div>
-                </div>
-                <a href="javascript:void(0)" class="card-footer card-link text-center small ">View
-                  All</a>
-              </div>
-              <!-- Support tickets -->
-            </div>
-            <div class="col-md-6 col-lg-12 col-xl-6">
+            <div class="col-md-6 col-lg-12">
               <div class="card">
                 <div class="card-header">
                   <h4>Projects Payments</h4>
@@ -650,7 +558,7 @@
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>Client Name</th>
+                          <th>Advertisers Name</th>
                           <th>Date</th>
                           <th>Payment Method</th>
                           <th>Amount</th>
@@ -724,6 +632,56 @@
               </div>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-link mr-2"></i>Link Generator
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="dropdownSelect" class="text-primary"><i class="fas fa-list-ul mr-2"></i>Select Any Brand</label>
+                                <select class="custom-select" id="dropdownSelect">
+                                    <option selected disabled>Choose an option...</option>
+                                    <option>Premium Option</option>
+                                    <option>Standard Option</option>
+                                    <option>Basic Option</option>
+                                    <option>Custom Option</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="input1" class="text-primary"><i class="fas fa-tag mr-2"></i>Enter Landing Page URL</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control text-black" id="input1" placeholder="Enter something...">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="input2" class="text-primary"><i class="fas fa-barcode mr-2"></i>Enter Sub ID <span class="text-danger">(Optional)</span></label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control text-black" id="input2" placeholder="Enter something else...">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group text-center mt-5">
+                                <button type="submit" class="btn btn-primary btn-lg px-5">
+                                    <i class="fas fa-check mr-2"></i> Create
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         </section>
         <div class="settingSidebar">
           <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
@@ -829,7 +787,13 @@
   <!-- General JS Scripts -->
   <script src="assets/js/app.min.js"></script>
   <!-- JS Libraies -->
-  <script src="assets/bundles/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/bundles/amcharts4/core.js"></script>
+  <script src="assets/bundles/amcharts4/maps.js"></script>
+  <script src="assets/bundles/amcharts4/charts.js"></script>
+  <script src="assets/bundles/amcharts4/animated.js"></script>
+  <script src="assets/bundles/amcharts4/worldLow.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- Page Specific JS File -->
   <script src="assets/js/page/index.js"></script>
   <!-- Template JS File -->
@@ -840,4 +804,5 @@
 
 
 <!-- index.html  21 Nov 2019 03:47:04 GMT -->
+
 </html>
