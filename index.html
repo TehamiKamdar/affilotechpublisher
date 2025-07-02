@@ -24,6 +24,38 @@
     padding: 20px;
   }
 
+  .metric-label {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  .metric-change {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  .metric-change.up {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+  }
+
+  .metric-change.down {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+  }
 
 
   .swiper-slide {
@@ -60,7 +92,7 @@
             <li class="menu-header">advertisers management</li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                  data-feather="copy"></i><span>Advertisers</span></a>
+                  data-feather="users"></i><span>Advertisers</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./my-advertisers.html">My Advertisers</a></li>
                 <li><a class="nav-link" href="#">New Advertisers</a></li>
@@ -70,7 +102,7 @@
             <li class="menu-header">reports management</li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                  data-feather="copy"></i><span>Reporting</span></a>
+                  data-feather="bar-chart-2"></i><span>Reporting</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./transactions.html">Transactions</a></li>
                 <li><a class="nav-link" href="./performance.html">Performance</a></li>
@@ -79,7 +111,7 @@
             <li class="menu-header">creativity</li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                  data-feather="copy"></i><span>Promotional</span></a>
+                  data-feather="tag"></i><span>Promotional</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./coupons.html">Coupons</a></li>
                 <li><a class="nav-link" href="./deep-links.html">Deep Links</a></li>
@@ -88,7 +120,7 @@
             </li>
             <li class="menu-header">finance management</li>
             <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Finance</span></a>
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="credit-card"></i><span>Finance</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./overview.html">Overview</a></li>
                 <li><a class="nav-link" href="./payments.html">Payments</a></li>
@@ -96,7 +128,7 @@
             </li>
             <li class="menu-header">tools management</li>
             <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Tools</span></a>
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="paperclip"></i><span>Tools</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./links.html">Link Generator</a></li>
                 <li><a class="nav-link" href="./api.html">API Integration</a></li>
@@ -105,7 +137,7 @@
             </li>
             <li class="menu-header">settings</li>
             <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Settings</span></a>
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="info"></i><span>Settings</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./my-profile.html">Profile</a></li>
                 <li><a class="nav-link" href="./webs.html">Websites</a></li>
@@ -127,38 +159,18 @@
       <div class="main-content">
         <section class="section">
           <div class="row ">
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <div class="card">
                 <div class="card-statistic-4">
                   <div class="align-items-center justify-content-between">
                     <div class="row ">
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
                         <div class="card-content">
-                          <h5 class="font-15">New Booking</h5>
-                          <h2 class="mb-3 font-18">258</h2>
-                          <p class="mb-0"><span class="col-green">10%</span> Increase</p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/1.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15"> Customers</h5>
-                          <h2 class="mb-3 font-18">1,287</h2>
-                          <p class="mb-0"><span class="col-orange">09%</span> Decrease</p>
+                          <h5 class="metric-label">Approved Amount</h5>
+                          <h2 class="metric-value">1,287</h2>
+                          <span class="metric-change up">
+                            <i class="fas fa-arrow-up mr-1"></i> 12.5%
+                          </span>
                         </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -171,17 +183,18 @@
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <div class="card">
                 <div class="card-statistic-4">
                   <div class="align-items-center justify-content-between">
                     <div class="row ">
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
                         <div class="card-content">
-                          <h5 class="font-15">New Project</h5>
-                          <h2 class="mb-3 font-18">128</h2>
-                          <p class="mb-0"><span class="col-green">18%</span>
-                            Increase</p>
+                          <h5 class="metric-label">pending amount</h5>
+                          <h2 class="metric-value">128</h2>
+                          <span class="metric-change down">
+                            <i class="fas fa-arrow-down mr-1"></i> 12.5%
+                          </span>
                         </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -194,16 +207,42 @@
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <div class="card">
                 <div class="card-statistic-4">
                   <div class="align-items-center justify-content-between">
                     <div class="row ">
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
                         <div class="card-content">
-                          <h5 class="font-15">Revenue</h5>
-                          <h2 class="mb-3 font-18">$48,697</h2>
-                          <p class="mb-0"><span class="col-green">42%</span> Increase</p>
+                          <h5 class="metric-label">rejected amount</h5>
+                          <h2 class="metric-value">258</h2>
+                          <span class="metric-change up">
+                            <i class="fas fa-arrow-up mr-1"></i> 12.5%
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                        <div class="banner-img">
+                          <img src="assets/img/banner/1.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="card">
+                <div class="card-statistic-4">
+                  <div class="align-items-center justify-content-between">
+                    <div class="row ">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                        <div class="card-content">
+                          <h5 class="metric-label">Total Sales</h5>
+                          <h2 class="metric-value">$48,697</h2>
+                          <span class="metric-change up">
+                            <i class="fas fa-arrow-up mr-1"></i> 12.5%
+                          </span>
                         </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -635,53 +674,57 @@
 
           <div class="row">
             <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-link mr-2"></i>Link Generator
-                    </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="dropdownSelect" class="text-primary"><i class="fas fa-list-ul mr-2"></i>Select Any Brand</label>
-                                <select class="custom-select" id="dropdownSelect">
-                                    <option selected disabled>Choose an option...</option>
-                                    <option>Premium Option</option>
-                                    <option>Standard Option</option>
-                                    <option>Basic Option</option>
-                                    <option>Custom Option</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="input1" class="text-primary"><i class="fas fa-tag mr-2"></i>Enter Landing Page URL</label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control text-black" id="input1" placeholder="Enter something...">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="input2" class="text-primary"><i class="fas fa-barcode mr-2"></i>Enter Sub ID <span class="text-danger">(Optional)</span></label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control text-black" id="input2" placeholder="Enter something else...">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group text-center mt-5">
-                                <button type="submit" class="btn btn-primary btn-lg px-5">
-                                    <i class="fas fa-check mr-2"></i> Create
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+              <div class="card">
+                <div class="card-header">
+                  <i class="fas fa-link mr-2"></i>Link Generator
                 </div>
+                <div class="card-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="dropdownSelect" class="text-primary"><i class="fas fa-list-ul mr-2"></i>Select Any
+                        Brand</label>
+                      <select class="custom-select" id="dropdownSelect">
+                        <option selected disabled>Choose an option...</option>
+                        <option>Premium Option</option>
+                        <option>Standard Option</option>
+                        <option>Basic Option</option>
+                        <option>Custom Option</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="input1" class="text-primary"><i class="fas fa-tag mr-2"></i>Enter Landing Page
+                        URL</label>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
+                        </div>
+                        <input type="text" class="form-control text-black" id="input1" placeholder="Enter something...">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="input2" class="text-primary"><i class="fas fa-barcode mr-2"></i>Enter Sub ID <span
+                          class="text-danger">(Optional)</span></label>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
+                        </div>
+                        <input type="text" class="form-control text-black" id="input2"
+                          placeholder="Enter something else...">
+                      </div>
+                    </div>
+
+                    <div class="form-group text-center mt-5">
+                      <button type="submit" class="btn btn-primary btn-lg px-5">
+                        <i class="fas fa-check mr-2"></i> Create
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
         </section>
         <div class="settingSidebar">
           <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
