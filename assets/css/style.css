@@ -5140,7 +5140,7 @@ body.sidebar-gone .main-sidebar {
 .sidebar-mini .main-sidebar {
     width: 65px;
     overflow: initial !important;
-    position: absolute;
+    position: fixed;
     box-shadow: none;
 }
 .sidebar-mini .main-sidebar:after {
