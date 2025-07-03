@@ -26,12 +26,12 @@
     --danger: #dc3545;
     --light: #f8f9fa;
     --dark: #343a40;
-    --primary-color: #6777ef !important ;
+    --primary-color: #00a9da !important ;
     --secondary-color: #ffffff !important ;
     --primary-light: #a2aef2;
     --primary-very-light: #e8ebfc;
-    --primary-hover: #5666d6;
-    --primary-dark: #5666d6;
+    --primary-hover: #56cdd6;
+    --primary-dark: #56cdd6;
     --text-light: #fff;
     --text-dark: #343a40;
     --text-color: #fff;
@@ -4844,7 +4844,7 @@ input[type="submit"].btn-block {
     text-decoration: none;
 }
 .breadcrumb-item.active a{
-    color: #6777ef;
+    color: #00a9da;
 }
 .breadcrumb-item a {
     color: #6c757d;
@@ -6531,7 +6531,7 @@ button.bg-dark:hover {
     border-left: 0 !important;
 }
 .border-primary {
-    border-color: #6777ef !important;
+    border-color: #00a9da !important;
 }
 .border-secondary {
     border-color: #6c757d !important;
