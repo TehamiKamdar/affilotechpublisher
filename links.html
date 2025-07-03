@@ -154,12 +154,27 @@
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
       <div class="navbar-bg"></div>
-      <nav class="navbar navbar-expand-lg main-navbar sticky">
-        <div class="form-inline mr-auto">
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="w-100 d-flex justify-content-between">
           <ul class="navbar-nav mr-3">
             <li><a href="#" data-toggle="sidebar" class="bg-white rounded-circle nav-link nav-link-lg
 									collapse-btn"> <i data-feather="align-justify"></i></a></li>
           </ul>
+          <ol class="breadcrumb mb-0 bg-white rounded-50 nav-link nav-link-lg
+									collapse-btn">
+            <li class="breadcrumb-item">
+              <a href="#"><i data-feather="home"></i></a>
+            </li>
+            <li class="breadcrumb-item mt-1">
+              <a href="#">Tools</a>
+            </li>
+            <li class="breadcrumb-item mt-1 active">
+              <a href="#">Link Generator</a>
+            </li>
+          </ol>
+          <div>
+            <a href="" class="bg-white rounded-circle nav-link nav-link-lg collapse-btn" title="Logout"><i data-feather="power" class="text-danger"></i></a>
+          </div>
         </div>
       </nav>
       <div class="main-sidebar sidebar-style-2" id="sidebar">

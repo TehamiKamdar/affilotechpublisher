@@ -62,6 +62,7 @@
     width: auto;
     /* let card width decide slide size */
   }
+
   .form-group {
     margin-bottom: 1.75rem;
   }
@@ -83,7 +84,7 @@
     border: 2px solid #e0e3ed;
     border-radius: 8px;
     background-color: white;
-    color: var(--primary-color) ;
+    color: var(--primary-color);
     font-weight: 500;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236777EF' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -142,6 +143,7 @@
     box-shadow: none;
     border-color: var(--primary-color);
   }
+
 </style>
 
 <body class="">
@@ -149,14 +151,24 @@
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
       <div class="navbar-bg"></div>
-      <nav class="navbar navbar-expand-lg main-navbar sticky">
-        <div class="form-inline mr-auto">
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="w-100 d-flex justify-content-between">
           <ul class="navbar-nav mr-3">
             <li><a href="#" data-toggle="sidebar" class="bg-white rounded-circle nav-link nav-link-lg
 									collapse-btn"> <i data-feather="align-justify"></i></a></li>
           </ul>
+          <ol class="breadcrumb mb-0 bg-white rounded-50 nav-link nav-link-lg
+									collapse-btn">
+            <li class="breadcrumb-item active">
+              <a href="#"><i data-feather="home" class="text-primary"></i></a>
+            </li>
+          </ol>
+          <div>
+            <a href="" class="bg-white rounded-circle nav-link nav-link-lg collapse-btn" title="Logout"><i data-feather="power" class="text-danger"></i></a>
+          </div>
         </div>
       </nav>
+
       <div class="main-sidebar sidebar-style-2" id="sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
@@ -200,7 +212,8 @@
             </li>
             <li class="menu-header">finance management</li>
             <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="credit-card"></i><span>Finance</span></a>
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="credit-card"></i><span>Finance</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./overview.html">Overview</a></li>
                 <li><a class="nav-link" href="./payments.html">Payments</a></li>
@@ -208,7 +221,8 @@
             </li>
             <li class="menu-header">tools management</li>
             <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="paperclip"></i><span>Tools</span></a>
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="paperclip"></i><span>Tools</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./links.html">Link Generator</a></li>
                 <li><a class="nav-link" href="./api.html">API Integration</a></li>
@@ -228,15 +242,17 @@
                   </ul>
                 </li>
                 <li><a class="nav-link" href="./settings.html">Settings</a></li>
-                <li><a class="nav-link" href="#">Logout</a></li>
               </ul>
             </li>
 
           </ul>
         </aside>
       </div>
+
+
       <!-- Main Content -->
       <div class="main-content">
+
         <section class="section">
           <div class="row ">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

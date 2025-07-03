@@ -4824,11 +4824,12 @@ input[type="submit"].btn-block {
     padding: 0.75rem 1rem;
     margin-bottom: 1rem;
     list-style: none;
-    background-color: #e9ecef;
+    background-color: transparent;
     border-radius: 0.25rem;
 }
 .breadcrumb-item + .breadcrumb-item {
     padding-left: 0.5rem;
+    font-size: 1.25em;
 }
 .breadcrumb-item + .breadcrumb-item::before {
     display: inline-block;
@@ -4842,7 +4843,10 @@ input[type="submit"].btn-block {
 .breadcrumb-item + .breadcrumb-item:hover::before {
     text-decoration: none;
 }
-.breadcrumb-item.active {
+.breadcrumb-item.active a{
+    color: #6777ef;
+}
+.breadcrumb-item a {
     color: #6c757d;
 }
 .pagination {
@@ -6559,6 +6563,10 @@ button.bg-dark:hover {
 .rounded {
     border-radius: 0.25rem !important;
 }
+
+  .rounded-50 {
+    border-radius: 50px !important;
+  }
 .rounded-top {
     border-top-left-radius: 0.25rem !important;
     border-top-right-radius: 0.25rem !important;
@@ -9812,6 +9820,9 @@ a.text-dark:hover {
     font-size: 1.33333em;
     line-height: 0.75em;
     vertical-align: -0.0667em;
+}
+.fa-md{
+    font-size: 1.25em;
 }
 .fa-xs {
     font-size: 0.75em;
